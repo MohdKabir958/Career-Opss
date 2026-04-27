@@ -1,0 +1,43 @@
+{
+  "name": "career-ops-web-server",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false --ignore=storage/** --ignore=prisma/career-ops.db* --ignore=dist/** --ignore=node_modules/** src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "tsx --test src/**/*.test.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@clerk/express": "^1.4.0",
+    "@prisma/client": "^5.22.0",
+    "@types/js-yaml": "^4.0.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "glob": "^11.0.3",
+    "helmet": "^8.0.0",
+    "js-yaml": "^4.1.1",
+    "mammoth": "^1.12.0",
+    "marked": "^18.0.2",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.14.0",
+    "@types/pdf-parse": "^1.1.4",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
